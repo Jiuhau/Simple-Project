@@ -1,0 +1,17 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: spring-cloud-config-server-8888
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Jiuhau/Simple-Project.git #Git上面的git仓库名字
+          #搜索目录
+          search-paths: config-files
+          username:
+          password:
+          #localhost:8888/
+      label: main #读取分支 不写默认为main
