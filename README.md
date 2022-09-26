@@ -1,0 +1,2 @@
+nacos-service-registry nacos服务注册
+用openfeign进行服务间调用
