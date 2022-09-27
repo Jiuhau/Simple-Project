@@ -13,5 +13,5 @@ spring:
           search-paths: config-files
           username:
           password:
-          #localhost:8888/
+          #http://localhost:8888/main/testConfig-dev.yml测试
       label: main #读取分支 不写默认为main
