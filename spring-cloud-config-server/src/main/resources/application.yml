@@ -28,7 +28,7 @@ spring:
     config:
       server:
         native:
-          #search-locations: classpath:/configs/ # 读取指定的配置文件
-          # 测试：http://localhost:8888/configs/testConfig-dev.yml
-          search-locations: classpath:/configs/{application} # 读取指定的配置文件
-          # 测试：http://localhost:8888/configs/testConfig-dev.yml
+          search-locations: classpath:/configs/ # 读取指定的配置文件
+          # 测试：http://localhost:8080/configs/testConfig-dev.yml
+          #search-locations: classpath:/configs/{application} # 读取指定的配置文件
+          # 测试：……
