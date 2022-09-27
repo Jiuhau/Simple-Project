@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 8080
 
 # 方法一
 #spring:
@@ -21,11 +21,14 @@ server:
 # 方法二
 spring:
   application:
-    name: spring-cloud-config-server-8888
+    name: spring-cloud-config-server-8080
   profiles:
     active: native # native会从resources路径下读取配置文件
   cloud:
     config:
       server:
         native:
-          search-locations: classpath:/configs/ # 读取指定的配置文件
+          #search-locations: classpath:/configs/ # 读取指定的配置文件
+          # 测试：http://localhost:8888/configs/testConfig-dev.yml
+          search-locations: classpath:/configs/{application} # 读取指定的配置文件
+          # 测试：http://localhost:8888/configs/testConfig-dev.yml

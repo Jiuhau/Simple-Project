@@ -10,3 +10,7 @@ eureka 注册中心
 spring-cloud-config-server springconfig配置中心
 用git部署配置中心
 
+spring-cloud-config-consumer springconfig获取配置
+/getConfig() POST获取信息
+
+
