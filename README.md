@@ -13,4 +13,4 @@ spring-cloud-config-server springconfig配置中心
 spring-cloud-config-consumer springconfig获取配置
 /getConfig() POST获取信息
 
-
+后续更新 zuul、gateway、hystrix、ribbon、sso单点登录等
