@@ -1,7 +1,7 @@
 server:
   port: 8080
 
-# 方法一
+# 方法一 从git中获取配置
 #spring:
 #  application:
 #    name: spring-cloud-config-server-8888
@@ -18,7 +18,7 @@ server:
 #          password: git密码
 #          # 测试：http://localhost:8888/main/testConfig-dev.yml
 
-# 方法二
+# 方法二 从本地获取配置
 spring:
   application:
     name: spring-cloud-config-server-8080
@@ -29,8 +29,8 @@ spring:
       server:
         native:
           # 方法2.1
-          search-locations: classpath:/configs/ # 读取指定的配置文件
+          #search-locations: classpath:/configs/ # 读取指定的配置文件
           # 测试：http://localhost:8080/configs/testConfig-dev.yml
           # 方法2.2
-          #search-locations: classpath:/configs/{application} # 读取指定的配置文件
+          search-locations: classpath:/configs/{application} # 读取指定的配置文件
           # 测试：……
