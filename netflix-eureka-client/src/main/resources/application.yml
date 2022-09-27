@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: netflix-eureka-client
+
+server:
+  port: 8081
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 30  # 参数用于定义服务续约任务的调用间隔时间，默认为30秒
+  client:
+    registry-fetch-interval-seconds: 30  # 拉取注册信息间隔时间，默认是30秒
+    service-url:
+      defaultZone: http://127.0.0.1:8080/eureka # 服务注册默认中心地址
