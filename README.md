@@ -23,7 +23,8 @@
 + 127.0.0.1:8080 访问注册中心管理页面
 
 ## 6.netflix-eureka-client eureka服务提供者
-+ :-)
++ eureka服务提供者模拟集群+注册中心服务清单的同步实现：
+> https://blog.csdn.net/weixin_55883492/article/details/124196724
 
 # 后续更新
 + zuul
