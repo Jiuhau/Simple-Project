@@ -1,17 +1,31 @@
 server:
   port: 8888
 
+# 方法一
+#spring:
+#  application:
+#    name: spring-cloud-config-server-8888
+#  profiles:
+#    active: dev # 环境(dev | demo | prod)
+#  cloud:
+#    config:
+#      label: main # 读取分支 不写默认为main
+#      server:
+#        git:
+#          uri: https://github.com/Jiuhau/Simple-Project.git #Git上面的git仓库名字
+#          search-paths: config-files #搜索目录
+#          username: git账号
+#          password: git密码
+#          # 测试：http://localhost:8888/main/testConfig-dev.yml
+
+# 方法二
 spring:
   application:
     name: spring-cloud-config-server-8888
+  profiles:
+    active: native # native会从resources路径下读取配置文件
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/Jiuhau/Simple-Project.git #Git上面的git仓库名字
-          #搜索目录
-          search-paths: config-files
-          username:
-          password:
-          #http://localhost:8888/main/testConfig-dev.yml测试
-      label: main #读取分支 不写默认为main
+        native:
+          search-locations: classpath:/configs/ # 读取指定的配置文件
