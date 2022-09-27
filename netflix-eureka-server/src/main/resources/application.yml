@@ -1,6 +1,7 @@
 spring:
   application:
     name: netflix-eureka-server
+
 server:
   port: 8080
 
@@ -8,9 +9,13 @@ server:
 eureka:
   instance:
     hostname: 127.0.0.1 # hostname是eureka集群服务器之间的区分
-    lease-expiration-duration-in-seconds: 90 #最后一次心跳后，间隔多久认定微服务不可用，默认90
+    prefer-ip-address: false  # 如我们不想使用主机名来定义注册中心的地址，也可以使用IP地址的形式，此参数设true，该值默认为false
+    lease-renewal-interval-in-seconds: 30  # 参数用于定义服务续约任务的调用间隔时间，默认为30秒
+    lease-expiration-duration-in-seconds: 90 # 参数用于定义服务失效的时间，默认为90秒
   client:
     register-with-eureka: false # 是否向自身注册：由于该应用为单个注册中心，所以设置为false，代表不向注册中心注册自己
     fetch-registry: false # 是否从自身拉取注册信息。由于单个注册中心，不拉去自身注册信息
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # 服务注册默认中心地址
   server:
-    enable-self-preservation: false # 是否开启eureka自我保护状态
+    enable-self-preservation: false # 是否开启eureka自我保护状态，默认为true
