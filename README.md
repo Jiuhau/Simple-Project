@@ -72,4 +72,4 @@
 	+ rabbitmq
 + 其他
 	+ sso单点登录
-	+ jacoob文字转语音
+	+ jacob文字转语音
