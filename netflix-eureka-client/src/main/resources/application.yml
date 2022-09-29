@@ -8,6 +8,8 @@ server:
 eureka:
   instance:
     lease-renewal-interval-in-seconds: 30  # 参数用于定义服务续约任务的调用间隔时间，默认为30秒
+    instance-id: client1 # 注册后在Eureka管理页面中显示的名字
+    prefer-ip-address: true # 是否在Eureka管理页面显示ip，鼠标移至instanceid处左下角会显示ip
   client:
     registry-fetch-interval-seconds: 30  # 拉取注册信息间隔时间，默认是30秒
     service-url:
