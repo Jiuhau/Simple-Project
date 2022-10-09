@@ -71,7 +71,7 @@
 	+ hystrix
 	+ sentinel
 + 服务网关
-	+ zuul
+	+ zuul：详情见**netflix-zuul-server**
 	+ gateway
 + 服务配置
 	+ springconfig：详情见**spring-cloud-config-consumer**
