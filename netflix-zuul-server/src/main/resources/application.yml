@@ -1,1 +1,24 @@
+spring:
+  application:
+    name: netflix-zuul-server
 
+server:
+  port: 8084
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 30  # 参数用于定义服务续约任务的调用间隔时间，默认为30秒
+    instance-id: zuulGateway # 注册后在Eureka管理页面中显示的名字
+    prefer-ip-address: true # 是否在Eureka管理页面显示ip，鼠标移至instanceid处左下角会显示ip
+  client:
+    registry-fetch-interval-seconds: 30  # 拉取注册信息间隔时间，默认是30秒
+    service-url:
+      defaultZone: http://127.0.0.1:8080/eureka # 服务注册默认中心地址
+
+zuul:
+  routes: # 指定微服务的访问路径
+    netflix-eureka-client: /client1/* # /netflix-eureka-client/getInfo -> /client1/getInfo
+    another-route-way: # 功能和上一行一样 another-route-way为路由名称 随意取名
+      service-id: netflix-eureka-client
+      path: /client2/* # /netflix-eureka-client/getInfo -> /client2/getInfo
+  ignored-services: netflix-eureka-client # 忽略指定微服务 逗号分割(/client还能用) 使用'*'可忽略所有微服务
