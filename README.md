@@ -7,7 +7,8 @@
 
 # 项目作用
 
-## miscellaneous 杂项，敲代码时一些不清楚的地方会在这测试
+## 0.miscellaneous 杂项，敲代码时一些不清楚的地方会在这测试
++ 目前以api包名分类
 
 ## 1.nacos-service-configuration nacos服务配置中心
 + 等待更新……
