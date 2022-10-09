@@ -4,6 +4,7 @@
 2. **nacos-service-registry**(nacos服务注册中心)和**nacos-service-configuration**(nacos服务配置中心)组合使用
 3. **spring-cloud-config-server**(springconfig配置中心)和**spring-cloud-config-consumer**(springconfig获取配置)组合使用
 4. **netflix-eureka-server**(eureka注册中心)和**netflix-eureka-client**(eureka服务提供者)和**netflix-eureka-consumer**(eureka服务消费者)组合使用
+5. **netflix-eureka-server**(eureka注册中心)和**netflix-eureka-client**(eureka服务提供者)和**netflix-zuul-server**(zuul网关服务)组合使用
 
 # 项目作用
 
@@ -14,7 +15,7 @@
 + 等待更新……
 
 ## 2.nacos-service-registry nacos服务注册中心
-+ 预先下载nacos 为防止版本问题 建议下载nacos-server-2.0.3
++ 建议下载nacos-server-2.0.3
 + openfeign服务间调用+loadBalancer负载均衡
 + GET：localhost:9001/service访问nacos-consumer服务，通过openfeign调用nacos-provider服务中暴露的接口
 + 完善计划
@@ -44,6 +45,15 @@
 + openfeign内置ribbon，不需要额外引入依赖
 + 完善计划
 	+ ribbon相关配置
+	
+## 8.netflix-zuul-server zuul网关服务
++ 只注册到注册中心，并开启网关服务@EnableZuulProxy，即可自动代理
+	+ localhost:8084/netflix-eureka-client/getInfo 进行测试
+	+ http://ZUUL_HOST:ZUUL_PORT/微服务在注册中心上的serviced/*
++ 访问任何接口都会500 可能是springboot版本过高
+>https://blog.csdn.net/qq_34383510/article/details/121512234
++ 完善计划
+	+ zuul相关配置
 	
 # 更新计划
 + 注册中心
