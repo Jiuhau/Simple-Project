@@ -14,7 +14,7 @@
 + jdk-jacob 仅支持windows系统使用 不支持语音切换
 	+ 各版本下载 >https://github.com/freemansoft/jacob-project/releases
 	+ 语音切换 > https://www.likecs.com/show-205090277.html
-	+ 将jacob.dll放在{java_path}/jdk/jre/bin/目录下
+	+ 将resources内的jacob.dll放在{java_path}/jdk/jre/bin/目录下
 + 完善计划
 	+ jdk-jacob更新excel等操作
 
@@ -22,7 +22,7 @@
 + 等待更新……
 
 ## 2.nacos-service-registry nacos服务注册中心
-+ 建议下载nacos-server-2.0.3
++ 建议使用nacos-server-2.0.3
 + openfeign服务间调用+loadBalancer负载均衡
 + GET：localhost:9001/service访问nacos-consumer服务，通过openfeign调用nacos-provider服务中暴露的接口
 + 完善计划
@@ -48,11 +48,12 @@
 > https://blog.csdn.net/weixin_55883492/article/details/124196724
 
 ## 7.netflix-eureka-consumer eureka服务消费者
++ localhost:8083/getInfo 访问client暴露的接口getInfo
 + openfeign进行服务间调用+ribbon负载均衡
 + openfeign内置ribbon，不需要额外引入依赖
 + 完善计划
 	+ ribbon相关配置
-	
+
 ## 8.netflix-zuul-server zuul网关服务
 + 只注册到注册中心，并开启网关服务@EnableZuulProxy，即可自动代理
 	+ localhost:8084/netflix-eureka-client/getInfo 进行测试
