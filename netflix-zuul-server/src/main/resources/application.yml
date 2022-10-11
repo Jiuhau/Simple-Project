@@ -16,9 +16,41 @@ eureka:
       defaultZone: http://127.0.0.1:8080/eureka # 服务注册默认中心地址
 
 zuul:
-  routes: # 指定微服务的访问路径
+  servlet-path: /zuul233 # 设置访问路径 默认值为zuul localhost:8084/zuul233/client2/getInfo
+  ignored-services: netflix-eureka-client # 关闭通过微服务名称路访问 多个服务逗号分割(/client还能用) 使用'*'可忽略所有微服务
+  routes:
+    # 通过服务实例指定映射路径
     netflix-eureka-client: /client1/* # /netflix-eureka-client/getInfo -> /client1/getInfo
-    another-route-way: # 功能和上一行一样 another-route-way为路由名称 随意取名
-      service-id: netflix-eureka-client
+    # 通过服务实例指定映射路径
+    serviceId-route-way: # 功能同上 another-route-way为路由名称 随意取名
+      service-id: netflix-eureka-client # 指定服务实例名
       path: /client2/* # /netflix-eureka-client/getInfo -> /client2/getInfo
-  ignored-services: netflix-eureka-client # 忽略指定微服务 逗号分割(/client还能用) 使用'*'可忽略所有微服务
+    # 通过url指定映射路径(路由不会作为HystrixCommand执行，同时也不能使用Ribbon来负载均衡多个URL)
+    url-route-way:
+      url: http://localhost:8081/ # localhost:8084/client3/getInfo -> localhost:8081/getInfo
+      path: /client3/**
+  # 全局设置路由前缀 访问：http://localhost:9004/order-api/order-service/userController/getUserInfo/{loginName}
+  #  prefix: /order-api
+  #  strip-prefix: true
+  #  routes:
+  #    use-routing:
+  #      service-id: ms-provider-order
+  #      path: /order-service/**
+  # 分服务设置 访问：http://localhost:9004/zuul/order-service/userController/getUserInfo/{loginName}
+  #  strip-prefix: true
+  #  routes:
+  #    use-routing:
+  #      service-id: ms-provider-order
+  #      path: /order-service/**
+  #      strip-prefix: true
+  # 过滤敏感路径
+  #  ignored-patterns: /**/admin/**
+  # 全局过滤敏感头信息
+  #  sensitive-headers:
+  # 分模块过滤敏感头信息
+  #  routes:
+  #    use-routing:
+  #      service-id: ms-provider-order
+  #      path: /order-service/**
+  #      sensitive-headers:
+  #        -
