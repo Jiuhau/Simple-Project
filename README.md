@@ -8,8 +8,13 @@
 
 # 项目作用
 
-## 0.miscellaneous 杂项，敲代码时一些不清楚的地方会在这测试
-+ 目前以api包名分类
+## 0.miscellaneous 杂项，敲代码时一些不清楚的地方会在这测试或复杂API的使用
++ 存放比较杂的API使用
++ api-test 以api包名分类，简单的API存放
++ jdk-jacob 仅支持windows系统使用 不支持语音切换
+	+ 各版本下载 >https://github.com/freemansoft/jacob-project/releases
+	+ 语音切换 > https://www.likecs.com/show-205090277.html
+	+ 将jacob.dll放在{java_path}/jdk/jre/bin/目录下
 
 ## 1.nacos-service-configuration nacos服务配置中心
 + 等待更新……
@@ -84,3 +89,4 @@
 + 其他
 	+ sso单点登录
 	+ jacob文字转语音
+	+ redis
