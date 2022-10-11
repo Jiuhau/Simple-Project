@@ -22,10 +22,11 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
+        <!-- jacob.dll放在{java_path}/jdk/jre/bin/目录下 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>com.hynnet</groupId>
+            <artifactId>jacob</artifactId>
+            <version>1.18</version>
         </dependency>
     </dependencies>
 
