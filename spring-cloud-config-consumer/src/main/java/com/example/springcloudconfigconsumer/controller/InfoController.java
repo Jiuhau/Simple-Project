@@ -22,12 +22,16 @@ public class InfoController {
     List<String> girlfriendList; // List数据
     @Value("${config.boyfriendList:notFound}")
     List<String> boyfriendList; // 单个数据
+    @Value("#{'${config.babyList:notFound}'.split(',')}")
+    List<String> babyList; // 逗号分割的单个数据
 
     @PostMapping("/getConfigList")
     public String getConfigList() {
         List<String> girlfriendList = this.girlfriendList;
         List<String> boyfriendList = this.boyfriendList;
+        List<String> babyList = this.babyList;
         return "girlfriendList:" + girlfriendList
-                + "\n" + "boyfriendList:" + boyfriendList;
+                + "\n" + "boyfriendList:" + boyfriendList
+                + "\n" + "babyList:" + babyList;
     }
 }
