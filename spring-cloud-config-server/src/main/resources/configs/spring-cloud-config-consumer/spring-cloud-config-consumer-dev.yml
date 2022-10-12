@@ -8,3 +8,4 @@ config:
     - sandy
     - marry
   boyfriendList: mike
+  babyList: "lily,sandy,marry"
