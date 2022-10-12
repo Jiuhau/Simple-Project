@@ -60,8 +60,6 @@
 	+ http://ZUUL_HOST:ZUUL_PORT/微服务在注册中心上的serviced/*
 + 访问任何接口都会500 可能是springboot版本过高
 >https://blog.csdn.net/qq_34383510/article/details/121512234
-+ 完善计划
-	+ zuul相关配置
 	
 # 更新计划
 + 注册中心
