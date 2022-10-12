@@ -3,3 +3,8 @@ server:
   port: 8081
 config:
   name: peter
+  girlfriendList:
+    - lily
+    - sandy
+    - marry
+  boyfriendList: mike
