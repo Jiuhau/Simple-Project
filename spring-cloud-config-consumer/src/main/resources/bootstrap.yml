@@ -1,20 +1,20 @@
 server:
   port: 8081
-#????????2.1
+#方法2.1
 #spring:
 #  application:
-#    name: testConfig #???????
+#    name: testConfig
 #  cloud:
 #    config:
-#      uri: http://127.0.0.1:8080 # ???config?????url
-#      label: main # ????????????
-#      profile: dev # ????????????(dev | demo | prod)
+#      uri: http://127.0.0.1:8080 # dev环境config-framework地址
+#      label: main # 读取分支 不写默认为main
+#      profile: dev # 环境(dev | demo | prod)
 
-#????????2.2
+#方法2.2
 spring:
   application:
-    name: spring-cloud-config-consumer #???????
+    name: spring-cloud-config-consumer # 服务名
   cloud:
     config:
-      uri: http://127.0.0.1:8080 # ???config?????url
-      profile: dev # ????????????(dev | demo | prod)
+      uri: http://127.0.0.1:8080 # dev环境config-framework地址
+      profile: dev # 环境(dev | demo | prod)
