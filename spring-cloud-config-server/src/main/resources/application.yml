@@ -19,6 +19,7 @@ spring:
           # 测试：http://localhost:8080/main/testConfig-dev.yml
           skip-ssl-validation: true # 禁用配置服务器对Git服务器SSL证书的验证 默认为false
           timeout: 5 # 设置HTTP连接超时 默认5s
+          # 模式匹配和多存储库 不会 但支持这个功能
 
 # 方法二 从本地获取配置
 #spring:
