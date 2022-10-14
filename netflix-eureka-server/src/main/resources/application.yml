@@ -19,3 +19,14 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # 服务注册默认中心地址，以逗号分割，有几台Eureka就写几个地址
   server:
     enable-self-preservation: false # 是否开启eureka自我保护状态，默认为true
+    eviction-interval-timer-in-ms: 60000 # 开启清除无效服务的定时任务，时间间隔。默认1分钟
+    delta-retention-timer-interval-in-ms: 0 # 间隔多长时间，清除过期的delta数据renewal-percent-threshold
+    disable-delta: false # 过期数据，是否也提供给client
+    log-identity-headers: true # eureka服务端是否记录client的身份header
+    rate-limiter-enabled: false # 是否开启请求频率限制器
+    rate-limiter-burst-size: 10 # 请求频率限制器
+    rate-limiter-full-fetch-average-rate: 100 # 请求频率的平均值
+    rate-limiter-throttle-standard-clients: false # 是否对标准的client进行频率请求限制。如果是false，则只对非标准client进行限制
+    rate-limiter-registry-fetch-average-rate: 500 # 注册服务、拉去服务列表数据的请求频率的平均值
+    rate-limiter-privileged-clients: # 设置信任的client list
+    renewal-percent-threshold: 0.85 # 在设置的时间范围类，期望与client续约的百分比。
