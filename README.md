@@ -12,8 +12,10 @@
 + 存放比较杂的API使用
 + api-test 以api包名分类，简单的API存放
 + jdk-jacob 仅支持windows系统使用 不支持语音切换
-	+ 各版本下载 >https://github.com/freemansoft/jacob-project/releases
-	+ 语音切换 > https://www.likecs.com/show-205090277.html
+	+ 各版本下载 
+> https://github.com/freemansoft/jacob-project/releases
+	+ 语音切换 
+> https://www.likecs.com/show-205090277.html
 	+ 将resources内的jacob.dll放在{java_path}/jdk/jre/bin/目录下
 + 完善计划
 	+ jdk-jacob更新excel等操作
@@ -32,8 +34,10 @@
 
 ## 3.spring-cloud-config-server springconfig配置中心
 + git部署配置中心
++ 服务器源码解读及SVN仓库配置
+> https://www.cnblogs.com/wuzhenzhao/p/10670580.html
 + 完善计划
-	+ springconfig配置含义
+	+ springconfig配置含义 https://zhuanlan.zhihu.com/p/433201039 ============================================================================================
 
 ## 4.spring-cloud-config-consumer springconfig获取配置
 + POST：localhost:8081/getConfig 验证是否获取成功
@@ -41,7 +45,7 @@
 ## 5.netflix-eureka-server eureka注册中心
 + 127.0.0.1:8080 访问注册中心管理页面
 + 完善计划
-	+ eureka配置含义
+	+ eureka配置含义 https://blog.csdn.net/JavaAndLI/article/details/125516594
 
 ## 6.netflix-eureka-client eureka服务提供者
 + eureka服务提供者模拟集群+注册中心服务清单的同步实现：
@@ -91,5 +95,6 @@
 	+ sso单点登录
 	+ jacob文字转语音：详情见**miscellaneous**
 	+ redis
+	+ websocket
 	
 # ps:所谓更新计划与完善计划 实际上就是下次一定(狗头
