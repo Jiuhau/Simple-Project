@@ -36,16 +36,16 @@
 + git部署配置中心
 + 服务器源码解读及SVN仓库配置
 > https://www.cnblogs.com/wuzhenzhao/p/10670580.html
-+ 完善计划
-	+ springconfig配置含义 https://zhuanlan.zhihu.com/p/433201039 ============================================================================================
++ springconfig配置含义
+> https://zhuanlan.zhihu.com/p/433201039 
 
 ## 4.spring-cloud-config-consumer springconfig获取配置
 + POST：localhost:8081/getConfig 验证是否获取成功
 
 ## 5.netflix-eureka-server eureka注册中心
 + 127.0.0.1:8080 访问注册中心管理页面
-+ 完善计划
-	+ eureka配置含义 https://blog.csdn.net/JavaAndLI/article/details/125516594
++ eureka配置含义
+>https://blog.csdn.net/JavaAndLI/article/details/125516594 ============================================================================================
 
 ## 6.netflix-eureka-client eureka服务提供者
 + eureka服务提供者模拟集群+注册中心服务清单的同步实现：
