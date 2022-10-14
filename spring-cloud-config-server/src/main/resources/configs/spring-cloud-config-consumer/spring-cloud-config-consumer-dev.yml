@@ -1,11 +1,13 @@
 #这是测试配置文件
 server:
   port: 8081
+file:
+  name: spring-cloud-config-consumer-dev.yml
 config:
-  name: peter
+  name: peter4
   girlfriendList:
-    - lily
-    - sandy
-    - marry
-  boyfriendList: mike
-  babyList: "lily,sandy,marry"
+    - lily4
+    - sandy4
+    - marry4
+  boyfriendList: mike4
+  babyList: "lily4,sandy4,marry4"

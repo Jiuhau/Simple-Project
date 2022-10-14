@@ -1,5 +1,7 @@
 #这是测试配置文件
 server:
   port: 8081
+file:
+  name: testConfig.yml
 config:
-  name: peter
+  name: peter1

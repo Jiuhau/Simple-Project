@@ -2,35 +2,37 @@ server:
   port: 8080
 
 # 方法一 从git中获取配置
-#spring:
-#  application:
-#    name: spring-cloud-config-server-8888
-#  profiles:
-#    active: dev # 环境(dev | demo | prod)
-#  cloud:
-#    config:
-#      label: main # 读取分支 不写默认为main
-#      server:
-#        git:
-#          uri: https://github.com/Jiuhau/Simple-Project.git #Git上面的git仓库名字
-#          search-paths: config-files #搜索目录
-#          username: git账号
-#          password: git密码
-#          # 测试：http://localhost:8888/main/testConfig-dev.yml
-
-# 方法二 从本地获取配置
 spring:
   application:
-    name: spring-cloud-config-server-8080
+    name: spring-cloud-config-server-8888
   profiles:
-    active: native # native会从resources路径下读取配置文件
+    active: dev # 环境(dev | demo | prod)
   cloud:
     config:
+      label: main # 读取分支 不写默认为main
       server:
-        native:
-          # 方法2.1
-          #search-locations: classpath:/configs/ # 读取指定的配置文件
-          # 测试：http://localhost:8080/configs/testConfig-dev.yml
-          # 方法2.2
-          search-locations: classpath:/configs/{application} # 读取指定的配置文件
-          # 测试：……
+        git:
+          uri: https://github.com/Jiuhau/Simple-Project.git #Git上面的git仓库名字
+          search-paths: config-files #搜索目录
+          #username: git账号
+          #password: git密码
+          # 测试：http://localhost:8080/main/testConfig-dev.yml
+          skip-ssl-validation: true # 禁用配置服务器对Git服务器SSL证书的验证 默认为false
+          timeout: 5 # 设置HTTP连接超时 默认5s
+
+# 方法二 从本地获取配置
+#spring:
+#  application:
+#    name: spring-cloud-config-server-8080
+#  profiles:
+#    active: native # native会从resources路径下读取配置文件
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          # 方法2.1
+#          #search-locations: classpath:/configs/ # 读取指定的配置文件
+#          # 测试：http://localhost:8080/configs/testConfig-dev.yml
+#          # 方法2.2
+#          search-locations: classpath:/configs/{application} # 读取指定的配置文件
+#          # 测试：……
