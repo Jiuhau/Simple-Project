@@ -1,5 +1,4 @@
 # 使用手则
----
 1. **Simple-Project** 即简单的项目，旨在把复杂项目中的各个技术栈拆分成单个项目，方便理解和使用
 2. **nacos-service-registry**(nacos服务注册中心)和**nacos-service-configuration**(nacos服务配置中心)组合使用
 3. **spring-cloud-config-server**(springconfig配置中心)和**spring-cloud-config-consumer**(springconfig获取配置)组合使用
@@ -7,7 +6,6 @@
 5. **netflix-eureka-server**(eureka注册中心)和**netflix-eureka-client**(eureka服务提供者)和**netflix-zuul-server**(zuul网关服务)组合使用
 
 # 项目作用
----
 ## 0.miscellaneous 杂项 工具类测试、简单JDK的使用
 + 存放比较杂的API使用
 + api-test 以api包名分类，简单的API存放
@@ -79,7 +77,7 @@
 + openfeign进行服务间调用+ribbon负载均衡
 + openfeign内置ribbon，不需要额外引入依赖
 + 完善计划
-	+ ribbon负载均衡相关配置 ============================================================================================
+	+ ribbon负载均衡相关配置
 
 ## 8.netflix-zuul-server zuul网关服务
 + 使用依赖
