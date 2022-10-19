@@ -15,6 +15,8 @@
 	+ 切换语音
 		> https://www.likecs.com/show-205090277.html
 	+ 将resources内的jacob.dll放在{java_path}/jdk/jre/bin/目录下
++ jdk-dozer 一个对象转换工具
+	
 + 完善计划
 	+ jdk-jacob更新excel等操作
 
