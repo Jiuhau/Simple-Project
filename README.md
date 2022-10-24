@@ -6,6 +6,7 @@
 5. **netflix-eureka-server**(eureka注册中心)和**netflix-eureka-client**(eureka服务提供者)和**netflix-zuul-server**(zuul网关服务)组合使用
 
 # 项目作用
+
 ## 0.miscellaneous 杂项 工具类测试、简单JDK的使用
 + 存放比较杂的API使用
 + api-test 以api包名分类，简单的API存放
@@ -16,7 +17,8 @@
 		> https://www.likecs.com/show-205090277.html
 	+ 将resources内的jacob.dll放在{java_path}/jdk/jre/bin/目录下
 + jdk-dozer 一个对象转换工具
-	
+	+ dozer详情
+		> https://dozer.sourceforge.net/
 + 完善计划
 	+ jdk-jacob更新excel等操作
 
@@ -96,8 +98,14 @@
 + 使用依赖
 	+ spring-boot-starter-web
 	+ aspectjweaver
-+ 还未完成……
-	> https://blog.csdn.net/weixin_45583303/article/details/118565966
+
+## 10.spring-rabbit rabbitMQ服务
++ 使用依赖
+	+ spring-rabbit
+	+ spring-boot-starter-web
+	+ fastjson2
++ 安装rabbitmq和web管理页面后，打开此网页查看
+	> http://127.0.0.1:15672/#/
 
 # 更新计划
 + spring
@@ -129,10 +137,11 @@
 	+ rabbitmq
 + 数据库
 	+ redis
-	+ 
+	+ mysql
 + 其他
 	+ sso单点登录
 	+ jacob文字转语音：详情见**miscellaneous**
+	+ dozer对象转换工具：详情见**miscellaneous**
 	+ websocket
 	+ k8s
 	+ 24种设计模式
