@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-rabbit
+  rabbitmq:
+    port: 5672
+    username: guest
+    password: guest
+    host: 127.0.0.1
+    virtual-host: # 可以不设置,使用server默认host
+    publisher-confirm-type: correlated # 确认消息已发送到交换机(Exchange)
+    publisher-returns: true # 确认消息已发送到队列(Queue)
