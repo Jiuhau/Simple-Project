@@ -1,7 +1,6 @@
 package com.example.apitest.java.util.stream.collectors;
 
 import com.example.apitest.common.User;
-import org.springframework.util.ObjectUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,5 +28,9 @@ public class CollectorsTest {
         // 答：用第三个参数对相同Key的Value进行逻辑比较
         System.out.println(users);
         System.out.println(map);
+        // 测试.count是统计条数还是统计值相加
+        Long long1 = users.stream().filter(a->a.getAge()!=null && a.getAge()>0).count();
+        System.out.println(long1);
+        // 答：统计条数
     }
 }
