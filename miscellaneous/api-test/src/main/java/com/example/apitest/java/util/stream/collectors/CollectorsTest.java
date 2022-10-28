@@ -29,8 +29,11 @@ public class CollectorsTest {
         System.out.println(users);
         System.out.println(map);
         // 测试.count是统计条数还是统计值相加
-        Long long1 = users.stream().filter(a->a.getAge()!=null && a.getAge()>0).count();
-        System.out.println(long1);
+        Long long1 = users.stream().filter(a -> a.getAge() != null && a.getAge() > 0).count();
         // 答：统计条数
+        System.out.println(long1);
+        // 测试groupingBy能否自动处理null
+        users.stream().collect(Collectors.groupingBy(User::getAge));
+        // 答：不能
     }
 }
