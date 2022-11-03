@@ -16,9 +16,17 @@ public class Main {
         users.add(new User("张伟", "男", 25));
         users.add(new User("小美", "女", 20));
         System.out.println(users.toString());
-        for (User user : users){
+        for (User user : users) {
             user.setAge(1);
         }
         System.out.println(users.toString());
+        // 时间戳获取会重复吗->会
+        long[] a = new long[10];
+        for (int i = 0; i < 10; i++) {
+            a[i] = System.currentTimeMillis();
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println(a[i]);
+        }
     }
 }
