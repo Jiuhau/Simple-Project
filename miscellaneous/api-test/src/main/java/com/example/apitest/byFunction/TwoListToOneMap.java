@@ -3,6 +3,7 @@ package com.example.apitest.byFunction;
 import com.example.apitest.common.User;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -35,5 +36,13 @@ public class TwoListToOneMap {
             return user1;
         }));
         System.out.println(map);
+        //map转回list
+        List userList = new ArrayList();
+        Iterator<String> iter = map.keySet().iterator();
+        while (iter.hasNext()) {
+            String key = iter.next();
+            userList.add(map.get(key));
+        }
+        System.out.println(userList);
     }
 }
