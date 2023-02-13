@@ -1,9 +1,9 @@
 package com.example.apitest;
 
 import com.example.apitest.common.User;
+import com.github.jknack.handlebars.internal.lang3.StringUtils;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -29,10 +29,28 @@ public class Main {
 //            System.out.println(a[i]);
 //        }
         //todo 计算
-        double checkRate = 0;
-        int submitPassCount = 0;
-        int submitCount = 1;
-        checkRate = 1.0D * submitPassCount / submitCount * 100;
-        System.out.println(checkRate);
+//        double checkRate = 0;
+//        int submitPassCount = 0;
+//        int submitCount = 1;
+//        checkRate = 1.0D * submitPassCount / submitCount * 100;
+//        System.out.println(checkRate);
+        //todo 转换
+        Map<String, Object> param = new HashMap<String, Object>(){{
+            put("dealerCode","buzhidao123");
+        }};
+        List<String> keyList = new ArrayList(){{
+            add("dealerCode");
+        }};
+        LinkedHashMap<String, Object> rst = new LinkedHashMap<>(param);
+        for (String paramKey : param.keySet()) {
+            Object paramVal = rst.get(paramKey);
+            String[] docSplit = paramKey.split("\\.");
+            String checkKey = docSplit[0];
+            int index = keyList.indexOf(checkKey);
+            if (index != -1 && Objects.nonNull(paramVal) && StringUtils.isNotBlank(paramVal.toString())) {
+                keyList.remove(index);
+            }
+            rst.put(checkKey, paramVal);
+        }
     }
 }
