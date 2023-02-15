@@ -12,6 +12,7 @@ public class StringTest {
         String context = "服务顾问{}您好，预约车辆【{}】还有{}小时到达预约时间，请做好接待准备。";
         System.out.println(context);
         System.out.println(context.replace("{}","替换文本"));
+        System.out.println(context.replace("{}",""));
 //        context.replaceAll("{0}","替换文学");
     }
 }
