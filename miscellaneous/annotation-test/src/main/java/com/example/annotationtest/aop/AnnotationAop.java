@@ -48,7 +48,7 @@ public class AnnotationAop {
                 List arrayList = (List) valueObj;
                 valueObj = arrayList.get(arrayList.size() - 1);
             }
-            String value = (String) valueObj;
+            String value = JSON.toJSONString(valueObj) ;
             if (value != null) {
                 //选择匹配对象
                 Matcher matcher = pattern.matcher(value);
