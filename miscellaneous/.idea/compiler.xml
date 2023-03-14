@@ -12,12 +12,15 @@
         <module name="api-test" />
         <module name="jdk-dozer" />
         <module name="algorithm" />
+        <module name="annotation-test" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="algorithm" options="-parameters" />
+      <module name="annotation-test" options="-parameters" />
       <module name="api-test" options="-parameters" />
       <module name="jdk-dozer" options="-parameters" />
       <module name="jdk-jacob" options="-parameters" />

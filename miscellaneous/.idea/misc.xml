@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/jdk-jacob/pom.xml" />
         <option value="$PROJECT_DIR$/jdk-dozer/pom.xml" />
         <option value="$PROJECT_DIR$/algorithm/pom.xml" />
+        <option value="$PROJECT_DIR$/annotation-test/pom.xml" />
       </list>
     </option>
   </component>
