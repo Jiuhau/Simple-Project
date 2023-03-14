@@ -55,50 +55,6 @@ public class Main {
 //            rst.put(checkKey, paramVal);
 //        }
         //todo 去重
-        List dupAreaCodesList = new ArrayList();
-        dupAreaCodesList.add("zeekr@001");
-        dupAreaCodesList.add("zeekr@001");
-        dupAreaCodesList.add("zeekr@002");
-        dupAreaCodesList.add("zeekr@001-zeekr@");
-        dupAreaCodesList.add("zeekr@003-zeekr@1");
-        dupAreaCodesList.add("zeekr@003-zeekr@2");
-        dupAreaCodesList.add("zeekr@001-zeekr@-zeekrz001");
-        dupAreaCodesList.add("zeekr@003-zeekr@1-zeekrz001");
-        System.out.println("去重前===" + dupAreaCodesList);
-        // list去重
-        Set<String> stringSet = new HashSet<>(dupAreaCodesList);
-        List<String> allAreaCodesList = new ArrayList<>(stringSet);
-        //存在大区则去除旗下中区小区，存在中区则去除旗下小区
-        //拿到只有大区的areaCode
-        List<String> firstOrgCode = allAreaCodesList.stream().filter(areaCode -> areaCode.split("-").length == 1)
-                .collect(Collectors.toList());
-        //删除包含大区的中区和小区
-        for (String first : firstOrgCode) {
-            allAreaCodesList = allAreaCodesList.stream().filter(areaCode -> {
-                //大区不过滤
-                if (areaCode.split("-").length == 1) {
-                    return true;
-                } else {
-                    return !areaCode.contains(first);
-                }
-            }).collect(Collectors.toList());
-        }
-        System.out.println("除大区==="+allAreaCodesList);
-        //拿到只有中区的areaCode
-        List<String> secondOrgCode = allAreaCodesList.stream().filter(areaCode -> areaCode.split("-").length == 2)
-                .collect(Collectors.toList());
-        //删除包含中区的小区
-        for (String second : secondOrgCode) {
-            allAreaCodesList = allAreaCodesList.stream().filter(areaCode -> {
-                //大区中区不过滤
-                if (areaCode.split("-").length <= 2) {
-                    return true;
-                } else {
-                    return !areaCode.contains(second);
-                }
-            }).collect(Collectors.toList());
-        }
 
-        System.out.println("去重后===" + allAreaCodesList);
     }
 }

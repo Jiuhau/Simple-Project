@@ -5,6 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.annotationtest.annotation.AnnotationTest;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping("/annotation")
 public class AnnotationTestController {
