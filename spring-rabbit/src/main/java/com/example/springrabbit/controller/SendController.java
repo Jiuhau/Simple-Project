@@ -4,8 +4,8 @@ import com.alibaba.fastjson2.JSONObject;
 import com.example.springrabbit.common.RabbitMQConstant;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -21,6 +21,16 @@ public class SendController {
 
     @Autowired
     RabbitTemplate rabbitTemplate;
+
+    @RequestMapping(value = "/apitest", method = RequestMethod.POST)
+    @ResponseBody
+    public Map recordActionInfo(String data, MultipartFile[] Files,MultipartFile files) {
+        System.out.println(data);
+        System.out.println(Files);
+        System.out.println(files);
+//        System.out.println(files[1]);
+        return new HashMap();
+    }
 
     /**
      * 发送消息到队列中(还需消费者从队列中获取消息并消费)

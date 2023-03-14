@@ -107,6 +107,13 @@
 + 安装rabbitmq和web管理页面后，打开此网页查看
 	> http://127.0.0.1:15672/#/
 
+## 11.spring-websocket websocket服务
++ 使用依赖
+	+ spring-boot-starter
+	+ tomcat-embed-core
++ 测试用网站
+	> http://coolaf.com/tool/chattest
+
 # 更新计划
 + spring
 	+ aop：详情见**spring-aspects-aop**
@@ -142,7 +149,7 @@
 	+ sso单点登录
 	+ jacob文字转语音：详情见**miscellaneous**
 	+ dozer对象转换工具：详情见**miscellaneous**
-	+ websocket
+	+ websocket：详见**spring-websocket**
 	+ k8s
 	+ 24种设计模式
 	
