@@ -9,6 +9,8 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,22 +22,42 @@ public class AnnotationAop {
     public void annotationTest() {
     }
 
+    /**
+     * 过滤入参，防止sql注入安全危险
+     *
+     * @param point
+     * @return
+     * @throws Throwable
+     */
     @Around("annotationTest()")
     public Object doBefore(ProceedingJoinPoint point) throws Throwable {
         //获取入参
         Object[] args = point.getArgs();
-        JSONObject params = JSON.parseObject(JSONObject.toJSONString(args[0]));
-        //获取orderBy 防止sql注入
-        String orderBy = params.getString("orderBy");
-        if (orderBy != null && !orderBy.isEmpty()) {
-            //创建匹配模式 只接受一个空格和字母
-            Pattern pattern = Pattern.compile("^[a-zA-Z]+\\s?[a-zA-Z]+$");
-            //选择匹配对象
-            Matcher matcher = pattern.matcher(orderBy);
-            if (!matcher.find()) {
-                throw new RuntimeException("orderBy参数异常");
+        JSONObject jsonObject = JSON.parseObject(JSONObject.toJSONString(args[0]));
+        Map<String, Object> map = JSONObject.toJavaObject(jsonObject, Map.class);
+
+        String str = "(?:')|(?:--)|(/\\*(?:.|[\\n\\r])*?\\*/)|(\\b(select|update" +
+                "|and|or|delete|insert|trancate|char|substr|ascii|declare|exec|count" +
+                "|master|into|drop|execute)\\b|(\\*|;|\\+|'|%))";
+        Pattern pattern = Pattern.compile(str);
+        //遍历每个入参
+        for (String key : map.keySet()) {
+            Object valueObj = map.get(key);
+            //如果是列表，则只判断最后一个
+            if (valueObj instanceof List) {
+                List arrayList = (List) valueObj;
+                valueObj = arrayList.get(arrayList.size() - 1);
+            }
+            String value = (String) valueObj;
+            if (value != null) {
+                //选择匹配对象
+                Matcher matcher = pattern.matcher(value);
+                if (matcher.find()) {
+                    throw new RuntimeException("参数\"" + key + "\"包含非法字符");
+                }
             }
         }
+
         Object result = point.proceed();
         return result;
     }
