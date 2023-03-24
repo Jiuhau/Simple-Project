@@ -2,9 +2,7 @@ package com.example.apitest.java.util.stream.collectors;
 
 import com.example.apitest.common.User;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class CollectorsTest {
@@ -33,7 +31,18 @@ public class CollectorsTest {
         // 答：统计条数
         System.out.println(long1);
         // 测试groupingBy能否自动处理null
-        users.stream().collect(Collectors.groupingBy(User::getAge));
+        //users.stream().collect(Collectors.groupingBy(User::getAge));
         // 答：不能
+
+        //用stream来对对象中的某个字段去重
+        users = users.stream().collect(Collectors.collectingAndThen(
+                Collectors.toCollection(() -> new TreeSet<>(
+                        Comparator.comparing(a -> a.getName())
+                )), ArrayList::new
+        ));
+        System.out.println(users);
+        double as = 12.1D;
+        int bs = (int) as;
+        System.out.println(bs);
     }
 }
