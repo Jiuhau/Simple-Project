@@ -15,18 +15,19 @@ public class InsertSort {
     }
 
     public static void insert(int[] arr) {
+        int gap = 1; //gap为1时插入排序 不为1时稍作修改则为希尔排序
         //遍历右侧全部
-        for (int i = 1; i < arr.length; i++) {
+        for (int i = 0 + gap; i < arr.length; i = i + gap) {
             //降序 当前元素和前一个对比
-            if (arr[i - 1] > arr[i]) {
+            if (arr[i - gap] > arr[i]) {
                 int j;
                 int temp = arr[i];
-                for (j = i - 1; j >= 0 && arr[j] > temp; j--) {
-                    System.out.println(">>i:" + i + ",j:" + j + ",temp:" + temp);
+                for (j = i - gap; j >= 0 && arr[j] > temp; j = j - gap) {
+                    //System.out.println(">>i:" + i + ",j:" + j + ",temp:" + temp);
                     //前一个赋值给后一个
-                    arr[j + 1] = arr[j];
+                    arr[j + gap] = arr[j];
                 }
-                arr[j + 1] = temp;
+                arr[j + gap] = temp;
                 System.out.println("排序中>>" + JSON.toJSONString(arr));
             }
         }
