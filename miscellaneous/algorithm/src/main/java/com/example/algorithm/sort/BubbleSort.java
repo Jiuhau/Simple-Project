@@ -7,7 +7,7 @@ import com.alibaba.fastjson.JSON;
  */
 public class BubbleSort {
     public static void main(String[] args) {
-        int arr[] = new int[]{1, 3, 5, 7, 6, 4, 2, 9};
+        int arr[] = new int[]{2, 3, 5, 9, 6, 4, 1, 7};
         System.out.println("原顺序:" + JSON.toJSONString(arr));
         arr = bubble(arr);
         System.out.println("排序后:" + JSON.toJSONString(arr));
@@ -24,18 +24,13 @@ public class BubbleSort {
          * 是否稳定：是
          */
         for (int i = 0; i < arr.length - 1; i++) {
-            boolean flag = true;
             for (int j = 0; j < arr.length - 1 - i; j++) {
                 //降序
                 if (arr[j] < arr[j + 1]) {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
-                    flag = false;
                     //System.out.println("排序中>>" + JSON.toJSONString(arr));
-                }
-                if (flag) {
-                    return arr;
                 }
             }
         }

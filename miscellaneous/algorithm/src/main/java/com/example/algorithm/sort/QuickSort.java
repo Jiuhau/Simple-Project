@@ -7,7 +7,7 @@ import com.alibaba.fastjson.JSON;
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int arr[] = new int[]{1, 3, 5, 7, 6, 4, 2, 9};
+        int arr[] = new int[]{2, 3, 5, 9, 6, 4, 1, 7};
         System.out.println("原顺序:" + JSON.toJSONString(arr));
         quick(arr, 0, arr.length - 1);
         System.out.println("排序后:" + JSON.toJSONString(arr));
