@@ -9,12 +9,12 @@ public class BubbleSort {
     public static void main(String[] args) {
         int arr[] = new int[]{2, 3, 5, 9, 6, 4, 1, 7};
         System.out.println("原顺序:" + JSON.toJSONString(arr));
-        arr = bubble(arr);
+        bubble(arr);
         System.out.println("排序后:" + JSON.toJSONString(arr));
 
     }
 
-    public static int[] bubble(int arr[]) {
+    public static void bubble(int arr[]) {
         /**
          * 时间复杂度
          * n + n-1 + n-2 + n-3 + …… + 2 + 1 等差数列
@@ -34,6 +34,5 @@ public class BubbleSort {
                 }
             }
         }
-        return arr;
     }
 }
